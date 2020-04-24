@@ -45,8 +45,29 @@ class Router
                 elseif($route === 'flagComment'){
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
                 }
+                elseif($route === 'unflagComment'){
+                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                }
                 elseif($route === 'deleteComment'){
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                }
+                elseif($route === 'register'){
+                    $this->frontController->register($this->request->getPost());
+                }
+                elseif($route === 'login'){
+                    $this->frontController->login($this->request->getPost());
+                }
+                elseif($route === 'updatePassword'){
+                    $this->backController->updatePassword($this->request->getPost());
+                }
+                elseif($route === 'logout'){
+                    $this->backController->logout();
+                }
+                elseif($route === 'deleteAccount'){
+                    $this->backController->deleteAccount();
+                }
+                elseif($route === 'deleteUser'){
+                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
                 }
                 elseif($route === 'administration'){
                     $this->backController->administration();
