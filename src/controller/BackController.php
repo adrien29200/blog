@@ -145,15 +145,6 @@ class BackController extends Controller
         }
     }
 
-    public function deleteUser($userId)
-    {
-        if($this->checkAdmin()) {
-            $this->userDAO->deleteUser($userId);
-            $this->session->set('delete_user', 'L\'utilisateur a bien été supprimé');
-            header('Location: ../public/index.php?route=administration');
-        }
-    }
-
     private function logoutOrDelete($param)
     {
         $this->session->stop();

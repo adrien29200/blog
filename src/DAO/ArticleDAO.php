@@ -13,14 +13,13 @@ class ArticleDAO extends DAO
         $article->setId($row['id']);
         $article->setTitle($row['title']);
         $article->setContent($row['content']);
-        $article->setAuthor($row['pseudo']);
         $article->setCreatedAt($row['createdAt']);
         return $article;
     }
 
     public function getArticles()
     {
-        $sql = 'SELECT article.id, article.title, article.content, user.pseudo, article.createdAt FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
+        $sql = 'SELECT article.id, article.title, article.content, article.author, article.createdAt FROM article ORDER BY article.id DESC';
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row){
@@ -33,7 +32,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($articleId)
     {
-        $sql = 'SELECT article.id, article.title, article.content, user.pseudo, article.createdAt FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
+        $sql = 'SELECT article.id, article.title, article.content, article.author, article.createdAt FROM article WHERE article.id = ?';
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
         $result->closeCursor();

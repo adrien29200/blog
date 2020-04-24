@@ -66,9 +66,6 @@ class Router
                 elseif($route === 'deleteAccount'){
                     $this->backController->deleteAccount();
                 }
-                elseif($route === 'deleteUser'){
-                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
-                }
                 elseif($route === 'administration'){
                     $this->backController->administration();
                 }
@@ -82,6 +79,7 @@ class Router
         }
         catch (Exception $e)
         {
+            var_dump($e);
             $this->errorController->errorServer();
         }
     }
