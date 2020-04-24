@@ -32,12 +32,9 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             $articles = $this->articleDAO->getArticles();
             $comments = $this->commentDAO->getFlagComments();
-            $users = $this->userDAO->getUsers();
-
             return $this->view->render('administration', [
                 'articles' => $articles,
-                'comments' => $comments,
-                'users' => $users
+                'comments' => $comments
             ]);   
         }
     }
@@ -116,44 +113,38 @@ class BackController extends Controller
         }
     }
 
-    public function updatePassword(Parameter $post)
-    {
-        if($this->checkLoggedIn()) {
-            if ($post->get('submit')) {
-                $this->userDAO->updatePassword($post, $this->session->get('pseudo'));
-                $this->session->set('update_password', 'Le mot de passe a été mis à jour');
-                header('Location: ../public/index.php?route=profile');
-            }
-            return $this->view->render('update_password');
-        }
-    }
-
     public function logout()
     {
         if($this->checkLoggedIn())
         {
-            $this->logoutOrDelete('logout');    
+            $this->session->stop();
+            $this->session->start();
+            if($param === 'logout') {
+                $this->session->set($param, 'À bientôt');
+            } else {
+                $this->session->set($param, 'Votre compte a bien été supprimé');
+            }
+            header('Location: ../public/index.php');
         }
     }
 
-    public function deleteAccount()
+    public function login(Parameter $post)
     {
-        if($this->checkLoggedIn())
-        {
-            $this->userDAO->deleteAccount($this->session->get('pseudo'));
-            $this->logoutOrDelete('delete_account');   
+        if($post->get('submit')) {
+            echo $_GET['pseudo'];
+            echo $post->get('pseudo');
+            if($_GET['pseudo'] === 'jean' && $_GET['password'] === 'jean1234') {
+                $this->session->set('login', 'Content de vous revoir');
+                $this->session->set('pseudo', $post->get('pseudo'));
+                header('Location: ../public/index.php?route=administration');
+            }
+            else {
+                $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
+                return $this->view->render('login', [
+                    'post'=> $post
+                ]);
+            }
         }
-    }
-
-    private function logoutOrDelete($param)
-    {
-        $this->session->stop();
-        $this->session->start();
-        if($param === 'logout') {
-            $this->session->set($param, 'À bientôt');
-        } else {
-            $this->session->set($param, 'Votre compte a bien été supprimé');
-        }
-        header('Location: ../public/index.php');
+        return $this->view->render('login');
     }
 }

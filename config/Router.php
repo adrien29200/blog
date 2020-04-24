@@ -51,11 +51,8 @@ class Router
                 elseif($route === 'deleteComment'){
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 }
-                elseif($route === 'register'){
-                    $this->frontController->register($this->request->getPost());
-                }
                 elseif($route === 'login'){
-                    $this->frontController->login($this->request->getPost());
+                    $this->backController->login($this->request->getPost());
                 }
                 elseif($route === 'updatePassword'){
                     $this->backController->updatePassword($this->request->getPost());
