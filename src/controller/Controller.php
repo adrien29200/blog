@@ -1,17 +1,19 @@
 <?php
 
-namespace App\src\controller;
+namespace Blog\src\controller;
 
-use App\config\Request;
-use App\src\constraint\Validation;
-use App\src\DAO\ArticleDAO;
-use App\src\DAO\CommentDAO;
-use App\src\model\View;
+use Blog\config\Request;
+use Blog\src\constraint\Validation;
+use Blog\src\DAO\ArticleDAO;
+use Blog\src\DAO\CommentDAO;
+use Blog\src\DAO\AdminDAO;
+use Blog\src\model\View;
 
 abstract class Controller
 {
     protected $articleDAO;
     protected $commentDAO;
+    protected $adminDAO;
     protected $view;
     private $request;
     protected $get;
@@ -23,6 +25,7 @@ abstract class Controller
     {
         $this->articleDAO = new ArticleDAO();
         $this->commentDAO = new CommentDAO();
+        $this->adminDAO = new AdminDAO();
         $this->view = new View();
         $this->validation = new Validation();
         $this->request = new Request();

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\src\controller;
+namespace Blog\src\controller;
 
-use App\config\Parameter;
+use Blog\config\Parameter;
 
 class BackController extends Controller
 {
@@ -126,7 +126,8 @@ class BackController extends Controller
     public function login(Parameter $post)
     {
         if($post->get('submit')) {
-            if($post->get('pseudo') === 'jean' && $post->get('password') === 'jean1234') {
+            $result = $this->adminDAO->login($post);
+            if($result && $result['isPasswordValid']) {
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('pseudo', $post->get('pseudo'));
                 header('Location: ../public/index.php?route=administration');
@@ -140,4 +141,43 @@ class BackController extends Controller
         }
         return $this->view->render('login');
     }
+
+    // public function login(Parameter $post)
+    // {
+    //     if($post->get('submit')) {
+    //         $result = $this->userDAO->login($post);
+    //         if($result && $result['isPasswordValid']) {
+    //             $this->session->set('login', 'Content de vous revoir');
+    //             $this->session->set('id', $result['result']['id']);
+    //             $this->session->set('role', $result['result']['name']);
+    //             $this->session->set('pseudo', $post->get('pseudo'));
+    //             header('Location: ../public/index.php');
+    //         }
+    //         else {
+    //             $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
+    //             return $this->view->render('login', [
+    //                 'post'=> $post
+    //             ]);
+    //         }
+    //     }
+    //     return $this->view->render('login');
+    // }
+
+    // public function login(Parameter $post)
+    // {
+    //     if($post->get('submit')) {
+    //         if($post->get('pseudo') === 'jean' && $post->get('password') === 'jean1234') {
+    //             $this->session->set('login', 'Content de vous revoir');
+    //             $this->session->set('pseudo', $post->get('pseudo'));
+    //             header('Location: ../public/index.php?route=administration');
+    //         }
+    //         else {
+    //             $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
+    //             return $this->view->render('login', [
+    //                 'post'=> $post
+    //             ]);
+    //         }
+    //     }
+    //     return $this->view->render('login');
+    // }
 }

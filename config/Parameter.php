@@ -1,6 +1,6 @@
 <?php
 
-namespace App\config;
+namespace Blog\config;
 
 class Parameter
 {

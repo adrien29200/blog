@@ -1,8 +1,8 @@
 <?php
 
-namespace App\src\model;
+namespace BLog\src\model;
 
-use App\config\Request;
+use Blog\config\Request;
 
 class View
 {

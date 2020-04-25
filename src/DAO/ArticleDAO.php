@@ -1,9 +1,9 @@
 <?php
 
-namespace App\src\DAO;
+namespace Blog\src\DAO;
 
-use App\config\Parameter;
-use App\src\model\Article;
+use Blog\config\Parameter;
+use Blog\src\model\Article;
 
 class ArticleDAO extends DAO
 {

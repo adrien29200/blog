@@ -1,6 +1,6 @@
 <?php
 
-namespace App\src\model;
+namespace Blog\src\model;
 
 class Article
 {

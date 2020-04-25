@@ -1,6 +1,6 @@
 <?php
 
-namespace App\src\constraint;
+namespace Blog\src\constraint;
 
 class Constraint
 {

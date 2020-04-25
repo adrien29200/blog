@@ -1,8 +1,8 @@
 <?php
 
-namespace App\src\controller;
+namespace Blog\src\controller;
 
-use App\config\Parameter;
+use Blog\config\Parameter;
 
 class FrontController extends Controller
 {

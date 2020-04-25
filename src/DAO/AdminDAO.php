@@ -1,8 +1,8 @@
 <?php
 
-namespace App\src\DAO;
+namespace Blog\src\DAO;
 
-use App\config\Parameter;
+use Blog\config\Parameter;
 
 class AdminDAO extends DAO
 {
