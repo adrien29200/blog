@@ -1,0 +1,59 @@
+[33mcommit 20eb0075ab3e176bb9d4cc85e9f889c01b85b1cc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Sat Apr 25 09:26:26 2020 +0200
+
+    mise en place deconnexion
+
+[33mcommit e95e66ccdb2fdb986dcc46d0f33c3dbf54717ffa[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 15:56:03 2020 +0200
+
+    modifications backcontroller et admin
+
+[33mcommit 27820f0eacdd2ed417d924a740d2fdc2e9938175[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 11:50:20 2020 +0200
+
+    connexion sans user
+
+[33mcommit 214cf13806cf00c7b5d54cc204478fdf1e10451f[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 11:11:40 2020 +0200
+
+    reprise projet
+
+[33mcommit 004d1421dc6e421c43ee3c8290d33fea2063a0cc[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 10:39:51 2020 +0200
+
+    ajout edit-article
+
+[33mcommit 57c79d6bb2fe8ce33e02bf9e7b28979eef46af56[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 10:35:56 2020 +0200
+
+    ajout administration
+
+[33mcommit f73f17d2452145aadf434a641659cc71411dc8a2[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 10:02:42 2020 +0200
+
+    ajout DAO
+
+[33mcommit fd47aad12c0ef643ae492880e60c52d6f8ebe981[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Fri Apr 24 09:36:16 2020 +0200
+
+    mise en place du mvc
+
+[33mcommit 7ec031668bcf7af6b16db7ba090c706eedb29cd4[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Tue Apr 21 10:22:30 2020 +0200
+
+    ajout du fichier home.php
+
+[33mcommit 944e1c85720ea51f3275c26cadeb94fcc2a0e623[m
+Author: Adrien <adrien.guillerm01@gmail.com>
+Date:   Tue Apr 21 10:14:20 2020 +0200
+
+    ajout du premier fichier db
