@@ -7,6 +7,8 @@
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
+<a href="../public/index.php?route=logout">Déconnexion</a>
+
 <h2>Articles</h2>
 <a href="../public/index.php?route=addArticle">Nouvel article</a>
 <table>

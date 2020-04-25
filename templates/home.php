@@ -12,20 +12,11 @@
 <?= $this->session->show('login'); ?>
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('delete_account'); ?>
-<?php
-if ($this->session->get('pseudo')) {
-    ?>
-    <?php if($this->session->get('role') === 'admin') { ?>
-        <a href="../public/index.php?route=administration">Administration</a>
-    <?php } ?>
+
+    <!-- <a href="../public/index.php?route=administration">Administration</a> -->
     <!-- <a href="../public/index.php?route=addArticle">Nouvel article</a> -->
-    <?php 
-} else {
-    ?>
     <a href="../public/index.php?route=login">Connexion</a>
-    <?php
-}
-?>
+
 <?php
 foreach ($articles as $article)
 {

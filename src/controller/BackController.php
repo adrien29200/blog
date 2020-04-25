@@ -6,37 +6,37 @@ use App\config\Parameter;
 
 class BackController extends Controller
 {
-    private function checkLoggedIn()
-    {
-        if(!$this->session->get('pseudo')) {
-            $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
-            header('Location: ../public/index.php?route=login');
-        } else {
-            return true;
-        }
-    }
+    // private function checkLoggedIn()
+    // {
+    //     if(!$this->session->get('pseudo')) {
+    //         $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
+    //         header('Location: ../public/index.php?route=login');
+    //     } else {
+    //         return true;
+    //     }
+    // }
 
-    private function checkAdmin()
-    {
-        $this->checkLoggedIn();
-        if(!($this->session->get('role') === 'admin')) {
-            $this->session->set('not_admin', 'Vous n\'avez pas le droit d\'accéder à cette page');
-            header('Location: ../public/index.php?route=profile');
-        } else {
-            return true;
-        }
-    }
+    // private function checkAdmin()
+    // {
+    //     $this->checkLoggedIn();
+    //     if(!($this->session->get('role') === 'admin')) {
+    //         $this->session->set('not_admin', 'Vous n\'avez pas le droit d\'accéder à cette page');
+    //         header('Location: ../public/index.php?route=profile');
+    //     } else {
+    //         return true;
+    //     }
+    // }
 
     public function administration()
     {
-        if($this->checkAdmin()) {
+        // if($this->checkAdmin()) {
             $articles = $this->articleDAO->getArticles();
             $comments = $this->commentDAO->getFlagComments();
             return $this->view->render('administration', [
                 'articles' => $articles,
                 'comments' => $comments
             ]);   
-        }
+        // }
     }
 
     public function addArticle(Parameter $post)
@@ -115,25 +115,18 @@ class BackController extends Controller
 
     public function logout()
     {
-        if($this->checkLoggedIn())
-        {
-            $this->session->stop();
-            $this->session->start();
-            if($param === 'logout') {
-                $this->session->set($param, 'À bientôt');
-            } else {
-                $this->session->set($param, 'Votre compte a bien été supprimé');
-            }
-            header('Location: ../public/index.php');
+        $this->session->stop();
+        $this->session->start();
+        if($param === 'logout') {
+            $this->session->set($param, 'À bientôt');
         }
+        header('Location: ../public/index.php');
     }
 
     public function login(Parameter $post)
     {
         if($post->get('submit')) {
-            echo $_GET['pseudo'];
-            echo $post->get('pseudo');
-            if($_GET['pseudo'] === 'jean' && $_GET['password'] === 'jean1234') {
+            if($post->get('pseudo') === 'jean' && $post->get('password') === 'jean1234') {
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('pseudo', $post->get('pseudo'));
                 header('Location: ../public/index.php?route=administration');

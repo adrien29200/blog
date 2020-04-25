@@ -20,8 +20,8 @@ abstract class DAO
         return $this->connection;
     }
 
-    //Méthode de connexion à notre base de données
-    private function getConnection()
+    
+    private function getConnection() //Méthode de connexion à notre base de données
     {
         //Tentative de connexion à la base de données
         try{
