@@ -1,6 +1,10 @@
 <?php $this->title = 'Article'; ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
+<?= $this->session->show('login'); ?>
+
+<?= 'bienveny'; ?>
+
 <div>
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>
@@ -32,6 +36,7 @@
             <?php
         } else {
             ?>
+            <?= $this->session->get('login'); ?>
             <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
             <?php
         }
