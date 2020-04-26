@@ -82,11 +82,9 @@ class BackController extends Controller
 
     public function deleteArticle($articleId)
     {
-        if($this->checkAdmin()) {
-            $this->articleDAO->deleteArticle($articleId);
-            $this->session->set('delete_article', 'L\' article a bien été supprimé');
-            header('Location: ../public/index.php?route=administration');
-        }
+        $this->articleDAO->deleteArticle($articleId);
+        $this->session->set('delete_article', 'L\' article a bien été supprimé');
+        header('Location: ../public/index.php?route=administration');
     }
 
     public function unflagComment($commentId)
@@ -100,11 +98,9 @@ class BackController extends Controller
 
     public function deleteComment($commentId)
     {
-        if($this->checkAdmin()) {
-            $this->commentDAO->deleteComment($commentId);
-            $this->session->set('delete_comment', 'Le commentaire a bien été supprimé');
-            header('Location: ../public/index.php?route=administration');
-        }
+        $this->commentDAO->deleteComment($commentId);
+        $this->session->set('delete_comment', 'Le commentaire a bien été supprimé');
+        header('Location: ../public/index.php?route=administration');
     }
 
     public function logout()
