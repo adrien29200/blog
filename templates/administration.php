@@ -7,6 +7,8 @@
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
+<?= $this->session->show('login'). ' ' . $this->session->show('pseudo'); ?>
+
 <a href="../public/index.php?route=logout">Déconnexion</a>
 
 <h2>Articles</h2>

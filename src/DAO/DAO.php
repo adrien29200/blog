@@ -17,6 +17,7 @@ abstract class DAO
             return $this->getConnection();
         }
         //Si la connexion existe, elle est renvoyée, inutile de refaire une connexion
+        var_dump('connected');
         return $this->connection;
     }
 
