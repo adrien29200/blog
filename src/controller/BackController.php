@@ -89,11 +89,9 @@ class BackController extends Controller
 
     public function unflagComment($commentId)
     {
-        if($this->checkAdmin()) {
-            $this->commentDAO->unflagComment($commentId);
-            $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
-            header('Location: ../public/index.php?route=administration');
-        }
+        $this->commentDAO->unflagComment($commentId);
+        $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
+        header('Location: ../public/index.php?route=administration');
     }
 
     public function deleteComment($commentId)
