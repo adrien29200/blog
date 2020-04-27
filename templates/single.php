@@ -3,8 +3,6 @@
 <p>En construction</p>
 <?= $this->session->show('login'); ?>
 
-<?= 'bienveny'; ?>
-
 <div>
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>
