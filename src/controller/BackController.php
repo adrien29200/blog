@@ -168,4 +168,14 @@ class BackController extends Controller
         }
         return $this->view->render('login');
     }
+
+    public function articleAdmin($articleId)
+    {
+        $article = $this->articleDAO->getArticle($articleId);
+        $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+        return $this->view->render('single_admin', [
+            'article' => $article,
+            'comments' => $comments
+        ]);
+    }
 }
