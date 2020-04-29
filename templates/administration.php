@@ -48,6 +48,7 @@
         <td>Pseudo</td>
         <td>Message</td>
         <td>Date</td>
+        <td>Id article</td>
         <td>Actions</td>
     </tr>
     <?php
@@ -59,9 +60,11 @@
             <td><?= htmlspecialchars($comment->getPseudo());?></td>
             <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
+            <td><?= htmlspecialchars($comment->getArticleId());?></td>
             <td>
                 <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
                 <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
+                <a href="../public/index.php?route=articleAdmin&articleId=<?= $comment->getArticleId(); ?>">Voir le contexte</a>
             </td>
         </tr>
         <?php

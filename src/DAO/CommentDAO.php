@@ -15,6 +15,7 @@ class CommentDAO extends DAO
         $comment->setContent($row['content']);
         $comment->setCreatedAt($row['createdAt']);
         $comment->setFlag($row['flag']);
+        $comment->setArticle_id($row['article_id']);
         return $comment;
     }
 
@@ -57,7 +58,7 @@ class CommentDAO extends DAO
 
     public function getFlagComments()
     {
-        $sql = 'SELECT id, pseudo, content, createdAt, flag FROM comment WHERE flag = ? ORDER BY createdAt DESC';
+        $sql = 'SELECT id, pseudo, content, createdAt, article_id, flag FROM comment WHERE flag = ? ORDER BY createdAt DESC';
         $result = $this->createQuery($sql, [1]);
         $comments = [];
         foreach ($result as $row) {

@@ -30,6 +30,27 @@ class Comment
     private $flag;
 
     /**
+     * @var int
+     */
+    private $article_id;
+
+    /**
+     * @return int
+     */
+    public function getArticleId()
+    {
+        return $this->article_id;
+    }
+
+    /**
+     * @param int $article_id
+     */
+    public function setArticle_id($article_id)
+    {
+        $this->article_id = $article_id;
+    }
+
+    /**
      * @return int
      */
     public function getId()
