@@ -36,7 +36,7 @@
             <?php
         }
         ?>
-        <p><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
+        <p><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>&articleId=<?= $article->getId(); ?>">Supprimer le commentaire</a></p>
         <br>
         <?php
     }

@@ -32,22 +32,13 @@ class CommentDAO extends DAO
         return $comments;
     }
 
-    // public function getNumberOfComment($articleId)
-    // {
-    //     $sql = 'SELECT COUNT(*) FROM comment WHERE article_id = ?';
-    //     $result = $this->createQuery($sql, [$articleId]);
-    //     $numberOfComments = [];
-    //     foreach ($result as $row) {
-
-    //     }
-    //     return $result;
-
-    // }
-
     public function addComment(Parameter $post, $articleId)
     {
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, flag, article_id) VALUES (?, ?, NOW(), ?, ?)';
         $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), 0, $articleId]);
+
+        $sql = 'UPDATE article SET numberOfComments = numberOfComments + 1 WHERE id = ?';
+        $this->createQuery($sql, [$articleId]);
     }
 
     public function flagComment($commentId)
@@ -62,10 +53,13 @@ class CommentDAO extends DAO
         $this->createQuery($sql, [0, $commentId]);
     }
 
-    public function deleteComment($commentId)
+    public function deleteComment($commentId, $articleId)
     {
         $sql = 'DELETE FROM comment WHERE id = ?';
         $this->createQuery($sql, [$commentId]);
+
+        $sql = 'UPDATE article SET numberOfComments = numberOfComments - 1 WHERE id = ?';
+        $this->createQuery($sql, [$articleId]);
     }
 
     public function getFlagComments()

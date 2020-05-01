@@ -9,10 +9,8 @@ class FrontController extends Controller
     public function home()
     {
         $articles = $this->articleDAO->getArticles();
-        // $comments = $this->commentDAO->getNumberOfComment($articleId);
         return $this->view->render('home', [
            'articles' => $articles
-        //    'comments' => $comments
         ]);
     }
 

@@ -49,7 +49,7 @@ class Router
                     $this->backController->unflagComment($this->request->getGet()->get('commentId'));
                 }
                 elseif($route === 'deleteComment'){
-                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                    $this->backController->deleteComment($this->request->getGet()->get('commentId'), $this->request->getGet()->get('articleId'));
                 }
                 elseif($route === 'login'){
                     $this->backController->login($this->request->getPost());

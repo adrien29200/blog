@@ -29,6 +29,8 @@ class Article
      */
     private $createdAt;
 
+    private $numberOfComments;
+
     /**
      * @return int
      */
@@ -108,4 +110,15 @@ class Article
     {
         $this->createdAt = $createdAt;
     }
+
+    public function getNumberOfComments()
+    {
+        return $this->numberOfComments;
+    }
+
+    public function setNumberOfComments($numberOfComments)
+    {
+        $this->numberOfComments = $numberOfComments;
+    }
+
 }
