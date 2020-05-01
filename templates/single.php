@@ -28,7 +28,6 @@
             <?php
         } else {
             ?>
-            <?= $this->session->get('login'); ?>
             <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
             <?php
         }
