@@ -32,6 +32,18 @@ class CommentDAO extends DAO
         return $comments;
     }
 
+    // public function getNumberOfComment($articleId)
+    // {
+    //     $sql = 'SELECT COUNT(*) FROM comment WHERE article_id = ?';
+    //     $result = $this->createQuery($sql, [$articleId]);
+    //     $numberOfComments = [];
+    //     foreach ($result as $row) {
+
+    //     }
+    //     return $result;
+
+    // }
+
     public function addComment(Parameter $post, $articleId)
     {
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, flag, article_id) VALUES (?, ?, NOW(), ?, ?)';

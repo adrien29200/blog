@@ -14,6 +14,7 @@ class ArticleDAO extends DAO
         $article->setTitle($row['title']);
         $article->setContent($row['content']);
         $article->setCreatedAt($row['createdAt']);
+        $article->setAuthor($row['author']);
         return $article;
     }
 

@@ -17,6 +17,7 @@ foreach ($articles as $article)
         <p><?= htmlspecialchars($article->getContent());?></p>
         <p><?= htmlspecialchars($article->getAuthor());?></p>
         <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+        <!-- <p>Nombre de commentaires : <?= $comment ?></p> -->
     </div>
     <br>
     <?php
