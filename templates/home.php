@@ -6,7 +6,8 @@
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('logout'); ?>
 
-<a href="../public/index.php?route=login">Connexion</a>
+<a href="../login">Connexion</a>
+<!-- href="../login -->
 
 <?php
 foreach ($articles as $article)

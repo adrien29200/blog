@@ -69,6 +69,9 @@ class Router
                 elseif($route === 'articleAdmin'){
                     $this->backController->articleAdmin($this->request->getGet()->get('articleId'));
                 }
+                elseif($route === 'home'){
+                    $this->frontController->home();
+                }
                 else{
                     $this->errorController->errorNotFound();
                 }

@@ -19,10 +19,4 @@ class AdminDAO extends DAO
         ];
     }
 
-    // public function updatePassword(Parameter $post, $pseudo)
-    // {
-    //     $sql = 'UPDATE admin SET password = ?';
-    //     $this->createQuery($sql, [password_hash($post->get('password'), PASSWORD_BCRYPT), $pseudo]);
-    // }
-
 }
