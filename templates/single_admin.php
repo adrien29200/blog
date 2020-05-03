@@ -10,11 +10,11 @@
 </div>
 <br>
 <div class="actions">
-    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+    <a href="editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+    <a href="deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
 </div>
 <br>
-<a href="../public/index.php?route=administration">Retour à l'administration</a>
+<a href="administration">Retour à l'administration</a>
 <div id="comments" class="text-left" style="margin-left: 50px">
     <h3>Ajouter un commentaire</h3>
     <?php include('form_comment.php'); ?>
@@ -36,7 +36,7 @@
             <?php
         }
         ?>
-        <p><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>&articleId=<?= $article->getId(); ?>">Supprimer le commentaire</a></p>
+        <p><a href="deleteComment&commentId=<?= $comment->getId(); ?>&articleId=<?= $article->getId(); ?>">Supprimer le commentaire</a></p>
         <br>
         <?php
     }

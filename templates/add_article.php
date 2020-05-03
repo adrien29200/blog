@@ -3,7 +3,7 @@
 <p>En construction</p>
 <div>
     <?php include('form_article.php');?>
-    <a href="../public/index.php?route=administration">Retour à l'administration</a>
+    <a href="administration">Retour à l'administration</a>
 </div>
 
 

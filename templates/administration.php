@@ -9,15 +9,16 @@
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('login'). ' ' . $this->session->show('pseudo'); ?>
 
-<a href="../public/index.php?route=logout">Déconnexion</a>
+<a href="logout">Déconnexion</a>
 
 <h2>Articles</h2>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<a href="addArticle">Nouvel article</a>
 <table>
     <tr>
         <td>Id</td>
         <td>Titre</td>
         <td>Contenu</td>
+        <td>Auteur</td>
         <td>Date</td>
         <td>Actions</td>
     </tr>
@@ -27,13 +28,13 @@
         ?>
         <tr>
             <td><?= htmlspecialchars($article->getId());?></td>
-            <td><a href="../public/index.php?route=articleAdmin&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
+            <td><a href="articleAdmin&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
             <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
             <td><?= htmlspecialchars($article->getAuthor());?></td>
             <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <td>
-                <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+                <a href="editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+                <a href="deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
             </td>
         </tr>
         <?php
@@ -62,9 +63,9 @@
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
             <td><?= htmlspecialchars($comment->getArticleId());?></td>
             <td>
-                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
-                <a href="../public/index.php?route=articleAdmin&articleId=<?= $comment->getArticleId(); ?>">Voir le contexte</a>
+                <a href="unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
+                <a href="deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
+                <a href="articleAdmin&articleId=<?= $comment->getArticleId(); ?>">Voir le contexte</a>
             </td>
         </tr>
         <?php

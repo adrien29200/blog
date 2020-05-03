@@ -9,7 +9,7 @@
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
 </div>
 <br>
-<a href="../public/index.php">Retour à l'accueil</a>
+<a href="home">Retour à l'accueil</a>
 <div id="comments" class="text-left" style="margin-left: 50px">
     <h3>Ajouter un commentaire</h3>
     <?php include('form_comment.php'); ?>
@@ -28,7 +28,7 @@
             <?php
         } else {
             ?>
-            <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+            <p><a href="flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
             <?php
         }
         ?>
