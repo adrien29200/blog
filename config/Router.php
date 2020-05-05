@@ -12,6 +12,18 @@ class Router
     private $backController;
     private $errorController;
     private $request;
+    // private $frontRoutes = [ "article" => "article($this->request->getGet()->get('articleId'))",
+    //                     "addComment" => "addComment($this->request->getPost(), $this->request->getGet()->get('articleId'))",
+    //                     "flagComment" => "flagComment($this->request->getGet()->get('commentId'))",
+    //                     "home" => "home()" ];
+    // private $backRoutes = [ "addArticle" => "addArticle($this->request->getPost())",
+    //                     "editArticle" => "editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'))",
+    //                     "deleteArticle" => "deleteArticle($this->request->getGet()->get('articleId'))",
+    //                     "unflagComment" => "unflagComment($this->request->getGet()->get('commentId'))",
+    //                     "deleteComment" => "deleteComment($this->request->getGet()->get('commentId'), $this->request->getGet()->get('articleId'))",
+    //                     "login" => "login($this->request->getPost())",
+    //                     "administration" => "administration()",
+    //                     "articleAdmin" => "articleAdmin($this->request->getGet()->get('articleId'))" ];
 
     public function __construct()
     {
@@ -21,9 +33,33 @@ class Router
         $this->errorController = new ErrorController();
     }
 
+    // public function run()
+    // {
+    //     $route = $this->request->getGet()->get('route');
+    //     try{
+    //         if(key_exists($route, $this->frontRoutes)) {
+    //             $path = $this->frontRoutes[$route];
+    //             $this->frontController->$path;    
+    //         } 
+    //         elseif(key_exists($route, $this->backRoutes)) {
+    //             $path = $this->backRoutes[$route];
+    //             $this->backController->$path;
+    //         }
+    //         else {
+    //             $this->errorController->errorNotFound();
+    //         }
+    //     }
+    //     catch (Exception $e)
+    //     {
+    //         var_dump($e);
+    //         $this->errorController->errorServer();
+    //     }
+    // }
+
     public function run()
     {
         $route = $this->request->getGet()->get('route');
+
         try{
             if(isset($route))
             {
@@ -54,14 +90,8 @@ class Router
                 elseif($route === 'login'){
                     $this->backController->login($this->request->getPost());
                 }
-                elseif($route === 'updatePassword'){
-                    $this->backController->updatePassword($this->request->getPost());
-                }
                 elseif($route === 'logout'){
                     $this->backController->logout();
-                }
-                elseif($route === 'deleteAccount'){
-                    $this->backController->deleteAccount();
                 }
                 elseif($route === 'administration'){
                     $this->backController->administration();

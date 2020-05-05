@@ -1,13 +1,12 @@
 <?php $this->title = 'Accueil'; ?>
 
-<h1>Mon blog</h1>
-<p>En construction</p>
+<h1>Billet simple pour l'Alaska</h1>
+<p>Roman publié épisode par épisode</p>
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('logout'); ?>
 
 <a href="login">Connexion</a>
-<!-- href="../login -->
 
 <?php
 foreach ($articles as $article)
