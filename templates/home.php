@@ -1,25 +1,36 @@
 <?php $this->title = 'Accueil'; ?>
 
-<h1>Billet simple pour l'Alaska</h1>
-<p>Roman publié épisode par épisode</p>
-<?= $this->session->show('add_comment'); ?>
-<?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('logout'); ?>
-
-<a href="login">Connexion</a>
-
-<?php
-foreach ($articles as $article)
-{
-    ?>
-    <div>
-        <h2><a href="article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= htmlspecialchars($article->getContent());?></p>
-        <p><?= htmlspecialchars($article->getAuthor());?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
-        <p>Nombre de commentaires : <?= htmlspecialchars($article->getNumberOfComments($article->getId())) ?></p>
+<header class="container-fluid text-center mb-2">
+    <div id="titre-principale">
+        <h1>Billet simple pour l'Alaska</h1>
+        <p>Roman de Jean Forteroche publié épisode par épisode</p>
     </div>
-    <br>
+</header>
+
+<div class="container text-center">
+    <?= $this->session->show('add_comment'); ?>
+    <?= $this->session->show('flag_comment'); ?>
+    <?= $this->session->show('logout'); ?>
+
     <?php
-}
-?>
+    foreach ($articles as $article)
+    {
+        ?>
+        <div class="article">
+            <h2><?= htmlspecialchars($article->getTitle());?></h2>
+            <p><?= htmlspecialchars($article->getContent());?></p>
+            <p><a class="btn btn-light font-weight-bold" href="article&articleId=<?= htmlspecialchars($article->getId());?>">Lire la suite...</a></p>
+            <p><?= htmlspecialchars($article->getAuthor());?></p>
+            <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+            <p>Nombre de commentaires : <?= htmlspecialchars($article->getNumberOfComments($article->getId())) ?></p>
+        </div>
+        <br>
+        <?php
+    }
+    ?>
+</div>
+
+<footer class="d-flex justify-content-between container-fluid bg-secondary pt-2 pb-2">
+    <p>par Jean Forteroche</p>
+    <a class="btn" id="button" href="login">Connexion</a>
+</footer>
