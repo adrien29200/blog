@@ -4,12 +4,49 @@ header {
     background-position: center ;
     height: 400px;
     border: 5px solid #524D4C; 
+    border-radius: 5px;
 }
 
 #titre-principale {
     color: #524D4C;   
-    width: 200px;
-    height: 100px;
+    width: 600px;
+    margin-top: 70px;
+    font-weight: bold;
+    text-shadow: 0 0 5px aliceblue;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+#titre-principale p {
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 650px) {
+    #titre-principale {
+        position: absolute;
+        top: 210px;
+        margin-top: 0px;
+        width: 90%;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #titre-principale p {
+        font-size: 1.5rem;
+    }
+
+    header {
+        height: 200px;
+    }
+
+    .container {
+        margin-top: 140px !important;
+    }
 }
 
 #content {
@@ -21,6 +58,8 @@ header {
     background-color: #3E7997;
     border-radius: 10px;
     box-shadow: 10px 10px 10px grey;
+    padding: 10px;
+    margin: 15px;
 }
 
 #button {

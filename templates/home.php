@@ -1,6 +1,6 @@
 <?php $this->title = 'Accueil'; ?>
 
-<header class="container-fluid text-center mb-2">
+<header class="container-fluid text-center mb-5">
     <div id="titre-principale">
         <h1>Billet simple pour l'Alaska</h1>
         <p>Roman de Jean Forteroche publié épisode par épisode</p>
@@ -32,5 +32,5 @@
 
 <footer class="d-flex justify-content-between container-fluid bg-secondary pt-2 pb-2">
     <p>par Jean Forteroche</p>
-    <a class="btn" id="button" href="login">Connexion</a>
+    <a class="btn text-light" id="button" href="login">Connexion</a>
 </footer>
