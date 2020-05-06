@@ -16,9 +16,11 @@
 <br>
 <a href="administration">Retour à l'administration</a>
 <div id="comments" class="text-left" style="margin-left: 50px">
-    <h3>Ajouter un commentaire</h3>
-    <?php include('form_comment.php'); ?>
-    <h3>Commentaires</h3>
+    <div class="comment col-md-4 col-sm-8">
+        <h3>Ajouter un commentaire</h3>
+        <?php include('form_comment.php'); ?>
+    </div>
+    <h3 class="ml-6">Commentaires</h3>
     <?php
     foreach ($comments as $comment)
     {

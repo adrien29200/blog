@@ -32,5 +32,5 @@
 
 <footer class="d-flex justify-content-between container-fluid bg-secondary pt-2 pb-2">
     <p>par Jean Forteroche</p>
-    <a class="btn text-light" id="button" href="login">Connexion</a>
+    <a class="btn text-light btnColor" href="login">Connexion</a>
 </footer>

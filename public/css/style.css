@@ -17,6 +17,7 @@ header {
 
 h1 {
     font-size: 3.5rem;
+    text-align: center;
 }
 
 #titre-principale p {
@@ -45,7 +46,13 @@ h1 {
     }
 
     .container {
-        margin-top: 140px !important;
+        margin-top: 160px !important;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .container {
+        margin-top: 230px !important;
     }
 }
 
@@ -62,14 +69,34 @@ h1 {
     margin: 15px;
 }
 
-#button {
-    background-color: #3E7997;
+.btnColor {
+    background-color: #3E7997 !important;
 }
 
 .container {
+    margin: auto;
     margin-top: 20px;
 }
 
 footer {
     background-color: #524D4C;
+}
+
+
+.comment {
+    background-color: #524D4C;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px grey;
+    padding: 10px;
+    margin: 20px;
+}
+
+.fond-h1 {
+    background-color: #6c757d;
+    margin-bottom: 50px;
+    padding: 15px;
+}
+
+.addComment {
+    margin: auto;
 }
