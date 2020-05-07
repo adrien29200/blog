@@ -7,7 +7,7 @@
     </div>
 </header>
 
-<div class="container text-center">
+<div class="containerHome text-center">
     <?= $this->session->show('add_comment'); ?>
     <?= $this->session->show('flag_comment'); ?>
     <?= $this->session->show('logout'); ?>
