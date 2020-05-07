@@ -21,7 +21,7 @@ class ArticleDAO extends DAO
 
     public function getArticles()
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.author, article.createdAt, article.numberOfComments FROM article ORDER BY article.id DESC';
+        $sql = 'SELECT id, title, content, author, createdAt, numberOfComments FROM article ORDER BY id DESC';
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row){
@@ -34,7 +34,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($articleId)
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.author, article.createdAt, article.numberOfComments FROM article WHERE article.id = ?';
+        $sql = 'SELECT id, title, content, author, createdAt, numberOfComments FROM article WHERE id = ?';
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
         $result->closeCursor();

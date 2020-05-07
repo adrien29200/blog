@@ -50,12 +50,6 @@ h1 {
     }
 }
 
-@media screen and (max-width: 520px) {
-    .container {
-        margin-top: 230px !important;
-    }
-}
-
 #content {
     background-color: #524d4c4a;
     color: aliceblue;
@@ -99,4 +93,21 @@ footer {
 
 .addComment {
     margin: auto;
+}
+
+@media screen and (max-width: 580px) {
+    .container {
+        margin-top: 230px !important;
+    }
+
+    .comment {
+        margin: auto;
+    }
+}
+
+.h2Admin {
+    background-color: #6c757d;
+    margin: auto;
+    display: table;
+    margin-top: 60px;
 }
