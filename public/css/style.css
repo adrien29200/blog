@@ -55,6 +55,10 @@ h1 {
     color: aliceblue;
 }
 
+.page {
+    min-height: 100vh;
+}
+
 .article {
     background-color: #3E7997;
     border-radius: 10px;
@@ -81,13 +85,12 @@ footer {
     background-color: #524D4C;
 }
 
-
 .comment {
     background-color: #524D4C;
     border-radius: 10px;
     box-shadow: 10px 10px 10px grey;
     padding: 10px;
-    margin: 20px;
+    margin: 20px 0px 0px 20px;
 }
 
 .fond-h1 {
@@ -107,6 +110,13 @@ footer {
 
     .comment {
         margin: auto;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .table {
+        display: table !important;
     }
 }
 

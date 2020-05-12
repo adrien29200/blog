@@ -7,8 +7,8 @@
     <p><?= htmlspecialchars($article->getAuthor());?></p>
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
 </div>
-<br>
-<a class="btnColor btn text-light ml-3" href="home">Retour à l'accueil</a>
+
+<a class="btnColor btn text-light ml-3 mt-3" href="home">Retour à l'accueil</a>
 <div id="comments">
     <div class="addComment comment mt-3 col-md-4 col-sm-8">
         <h3 class="text-center">Ajouter un commentaire</h3>
@@ -19,7 +19,7 @@
     foreach ($comments as $comment)
     {
         ?>
-        <div class="comment col-md-4 col-sm-8 col-xs-11 mt-3 mb-3">
+        <div class="comment col-md-4 col-sm-8 col-xs-11">
             <h4><?= htmlspecialchars($comment->getPseudo());?></h4>
             <p><?= htmlspecialchars($comment->getContent());?></p>
             <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>

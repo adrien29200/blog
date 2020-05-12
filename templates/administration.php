@@ -27,7 +27,7 @@
         ?>
         <tr>
             <td scope="row"><?= htmlspecialchars($article->getTitle());?></td>
-            <td scope="row"><?= substr(htmlspecialchars($article->getContent()), 0, 100);?></td>
+            <td scope="row"><?= substr($article->getContent(), 0, 100);?></td>
             <td scope="row">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <td scope="row">
                 <a href="editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>

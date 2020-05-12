@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../Blog/public/css/style.css" type="text/css" />
     <script src="https://cdn.tiny.cloud/1/cxhqwfb8olx1tl93j6wib40qlgv4l4e75b7yiwi9ahj70iz3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-        tinymce.init({ selector: '#newText'}); 
+        tinymce.init({ selector: '#newText', language : "fr_FR", height: 500}); 
     </script>
     <title><?= $title ?></title>
 </head>
 <body>
-    <div id="content">
+    <div id="content" class="page">
         <?= $content ?>
     </div>
 </body>

@@ -18,7 +18,7 @@
         ?>
         <div class="article">
             <h2><?= htmlspecialchars($article->getTitle());?></h2>
-            <p><?= substr(htmlspecialchars($article->getContent()), 0, 400);?></p>
+            <p><?= substr($article->getContent(), 0, 400);?></p>
             <p><a class="btn btn-light font-weight-bold" href="article&articleId=<?= htmlspecialchars($article->getId());?>">Lire la suite...</a></p>
             <p><?= htmlspecialchars($article->getAuthor());?></p>
             <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
