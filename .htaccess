@@ -1,6 +1,11 @@
+Options +FollowSymLinks
 RewriteEngine On
+
+RewriteCond %{THE_REQUEST} \s/+public/(\S*) [NC]
+RewriteRule ^ /%1 [R=301,NE,L]
 RewriteCond %{REQUEST_URI} !(public|.css)
-# RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png)$ [NC]
 RewriteRule ^(.+)$ public/index.php?route=$1 [QSA,L]
 
+RewriteRule ^(?!public/)(.*)$ public/$1 [L,NC]
 
+# RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png)$ [NC]
