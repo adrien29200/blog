@@ -7,7 +7,7 @@ header {
     border-radius: 5px;
 }
 
-#titre-principale {
+#main-title {
     color: #524D4C;   
     width: 600px;
     margin-top: 70px;
@@ -20,12 +20,12 @@ h1 {
     text-align: center;
 }
 
-#titre-principale p {
+#main-title p {
     font-size: 2rem;
 }
 
 @media screen and (max-width: 650px) {
-    #titre-principale {
+    #main-title {
         position: absolute;
         top: 210px;
         margin-top: 0px;
@@ -37,7 +37,7 @@ h1 {
         font-size: 2.5rem;
     }
 
-    #titre-principale p {
+    #main-title p {
         font-size: 1.5rem;
     }
 

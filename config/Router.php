@@ -77,7 +77,6 @@ class Router
         }
         catch (Exception $e)
         {
-            var_dump($e);
             $this->errorController->errorServer();
         }
     }

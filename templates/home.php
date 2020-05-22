@@ -1,7 +1,7 @@
 <?php $this->title = 'Accueil'; ?>
 
 <header class="container-fluid text-center mb-5">
-    <div id="titre-principale">
+    <div id="main-title">
         <h1>Billet simple pour l'Alaska</h1>
         <p>Roman de Jean Forteroche publié épisode par épisode</p>
     </div>
@@ -18,7 +18,7 @@
         ?>
         <div class="article">
             <h2><?= htmlspecialchars($article->getTitle());?></h2>
-            <p><?= substr($article->getContent(), 0, 400);?></p>
+            <p><?= strip_tags(substr($article->getContent(), 0, 400));?></p>
             <p><a class="btn btn-light font-weight-bold" href="article&articleId=<?= htmlspecialchars($article->getId());?>">Lire la suite...</a></p>
             <p><?= htmlspecialchars($article->getAuthor());?></p>
             <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
